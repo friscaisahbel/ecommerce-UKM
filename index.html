@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <style>
+  .modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+  }
+
+  .modal-content p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: red;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce UKM UnMer - UNIVERSITAS MERDEKA MALANG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader">
+    <img src="images/ajax-loader.gif" alt="Loading..." />
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center ;">
+      <a href="#" class="navbar-brand"><img src="images/logo.png" alt="Logo UKM UnMer" /></a> 
+<a href="#beranda" class="nav-link" style="font-weight: bold;">BERANDA</a>
+<a href="#kategori" class="nav-link" style="font-weight: bold;">KATEGORI</a>
+<a href="#tentang" class="nav-link" style="font-weight: bold;">TENTANG</a>
+<a href="#kontak" class="nav-link" style="font-weight: bold;">KONTAK</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO BANNER DENGAN GAMBAR -->
+  <section id="intro" style="position: relative; overflow: hidden;">
+    <img src="images/banner.jpg" alt="Banner UKM" style="width: 100%; height: auto; max-height: 500px; object-fit: cover;" />
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: lch(51.31% 0.4 18.49 / 0.851); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #d4dd27ab;">
+      <h1 style="font-size: 2.5rem;">PERALATAN UKM UNMER MALANG </h1>
+      <p style="max-width: 600px; text-align: center;">Temukan Produk terbaik yang dibutuhkan dari UKM Mahasiswa Universitas Merdeka. Unik, kreatif, dan berkualitas.</p>
+      <a href="#produk" style="text-decoration: none;">
+      <a href="#produk" class="btn btn-black" style="margin-top: 1rem;">Belanja Sekarang</a>
+    </div>
+  </section>
+
+  <!-- PRODUK -->
+  <section class="container" style="margin-top: 3rem;">
+    <h2 class="card-title" style="text-align: center;">Produk Kegiatan Unggulan</h2>
+    <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      
+  <!-- MODAL POPUP -->
+<div id="modal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <p id="modal-text">Harga produk ini adalah ...</p>
+  </div>
+</div>
+
+      <div class="product-card">
+        <img src="images/produk1.jpg" alt="Produk 1" class="product-image">
+        <div class="card-detail">
+          <h3>KAMERA CANON</h3>
+          <p class="price" style="display: none;">Rp 750.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk2.jpg" alt="Produk 2" class="product-image">
+        <div class="card-detail">
+          <h3>GITAR YAMAHA</h3>
+          <p class="price" style="display: none;">Rp 1.000.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk3.jpg" alt="Produk 3" class="product-image">
+        <div class="card-detail">
+          <h3>E-SPORT</h3>
+          <p class="price" style="display: none;">Rp 1.500.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk4.jpg" alt="Produk 4" class="product-image">
+        <div class="card-detail">
+          <h3>BAJU TAEKWONDO</h3>
+          <p class="price" style="display: none;">Rp 200.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk5.jpg" alt="Produk 5" class="product-image">
+        <div class="card-detail">
+          <h3>BOLA, BASKET, VOLLY</h3>
+          <p class="price" style="display: none;">Rp 400.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk6.jpg" alt="Produk 6" class="product-image">
+        <div class="card-detail">
+          <h3>PERALATAN MENDAKI</h3>
+          <p class="price" style="display: none;">Rp 2.000.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk7.jpg" alt="Produk 7" class="product-image">
+        <div class="card-detail">
+          <h3>TRIPOD</h3>
+          <p class="price" style="display: none;">Rp 150.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+       <div class="product-card">
+        <img src="images/produk8.jpg" alt="Produk 8" class="product-image">
+        <div class="card-detail">
+          <h3>JERSEY BASKET</h3>
+          <p class="price" style="display: none;">Rp 160.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk9.jpg" alt="Produk 9" class="product-image">
+        <div class="card-detail">
+          <h3>BULU TANGKIS</h3>
+          <p class="price" style="display: none;">Rp 120.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk10.jpg" alt="Produk 10" class="product-image">
+        <div class="card-detail">
+          <h3>BAJU SENI TARI</h3>
+          <p class="price" style="display: none;">Rp 300.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk11.jpg" alt="Produk 11" class="product-image">
+        <div class="card-detail">
+          <h3>CATUR</h3>
+          <p class="price" style="display: none;">Rp 140.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk12.jpg" alt="Produk 12" class="product-image">
+        <div class="card-detail">
+          <h3> AL-QURAN</h3>
+          <p class="price" style="display: none;">Rp 120.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk13.jpg" alt="Produk 13" class="product-image">
+        <div class="card-detail">
+          <h3>KEYBOARD</h3>
+          <p class="price" style="display: none;">Rp 500.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk14.jpg" alt="Produk 14" class="product-image">
+        <div class="card-detail">
+          <h3>MICROPHONE</h3>
+          <p class="price" style="display: none;">Rp 120.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk15.jpg" alt="Produk 15" class="product-image">
+        <div class="card-detail">
+          <h3>PERALATAN ATK</h3>
+          <p class="price" style="display: none;">Rp 100.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk16.jpg" alt="Produk 16" class="product-image">
+        <div class="card-detail">
+          <h3>NET VOLLY</h3>
+         <p class="price" style="display: none;">Rp 250.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk17.jpg" alt="Produk 17" class="product-image">
+        <div class="card-detail">
+          <h3>JERSEY BOLA</h3>
+          <p class="price" style="display: none;">Rp 145.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+       </div>
+
+      <div class="product-card">
+        <img src="images/produk18.jpg" alt="Produk 18" class="product-image">
+        <div class="card-detail">
+          <h3>ALKITAB</h3>
+          <p class="price" style="display: none;">Rp 90.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/produk19.jpg" alt="Produk 19" class="product-image">
+        <div class="card-detail">
+          <h3>PERALATAN LUKIS</h3>
+          <p class="price" style="display: none;">Rp 300.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+       <div class="product-card">
+        <img src="images/produk20.jpg" alt="Produk 20" class="product-image">
+        <div class="card-detail">
+          <h3>PERALATAN LENGKAP PMI</h3>
+         <p class="price" style="display: none;">Rp 700.000,00</p>
+          <button class="btn btn-black">Beli</button>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+<!-- TENTANG, KONTAK, dan KATEGORI BERSEBELAHAN -->
+<section class="container" style="margin-top: 3rem; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: space-between;">
+
+  <!-- TENTANG -->
+  <div id="tentang" style="flex: 1; min-width: 250px;">
+    <h2>Tentang UKM UnMer</h2>
+    <p>UKM Universitas Merdeka Malang bertujuan untuk mengembangkan kreativitas, minat, dan bakat mahasiswa melalui berbagai kegiatan organisasi yang produktif dan inovatif.</p>
+  </div>
+
+  <!-- KONTAK -->
+  <div id="kontak" style="flex: 1; min-width: 250px;">
+    <h2>Kontak Kami</h2>
+    <p>Email: ukm@unmer.ac.id</p>
+    <p>Telepon: 0341-156527</p>
+    <p>Alamat: Jl. Terusan Dieng No.62-64, Malang</p>
+  </div>
+
+  <!-- KATEGORI -->
+  <div id="kategori" style="flex: 1; min-width: 250px;">
+    <h2>Kategori Produk</h2>
+    <ul style="list-style: none; padding-left: 0;">
+      <li>📷 Fotografi</li>
+      <li>🎸 Musik</li>
+      <li>🎮 E-Sport</li>
+      <li>🥋 Seni & Olahraga</li>
+      <li>📚 Keagamaan & Pendidikan</li>
+    </ul>
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+  <footer style="margin-top: 4rem;">
+    <div class="container">
+      <p>&copy; 2025 UKM UnMer. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  // Jalankan saat DOM siap
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil semua tombol beli
+    const buttons = document.querySelectorAll(".btn-black");
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        // Cari elemen harga terdekat di dalam product-card
+        const price = this.closest(".product-card").querySelector(".price");
+        if (price) {
+          alert("Harga produk ini adalah " + price.textContent);
+        }
+      });
+    });
+  });
+</script>
+
+  <!-- SCRIPT -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modal");
+    const modalText = document.getElementById("modal-text");
+    const closeModal = document.getElementById("closeModal");
+
+    const buyButtons = document.querySelectorAll(".btn-black");
+
+    buyButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const card = this.closest(".product-card");
+        if (card) {
+          const price = card.querySelector(".price");
+          if (price) {
+            modalText.textContent = "Harga produk ini adalah " + price.textContent;
+            modal.style.display = "flex";
+          }
+        }
+      });
+    });
+
+    closeModal.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    // Tutup modal jika klik di luar
+    window.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
